@@ -1,3 +1,4 @@
+/// main.ts is the main file that nestjs runs everytime the application is started
 import { Controller, Module, Get } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
@@ -19,7 +20,7 @@ class AppModule {}
 /// runs every time the application is started which is generally named as 'bootstrap'
 (async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.listen(5000, () => {
+  await app.listen(5000, () => {
     console.log('Listening on port 5000');
   });
 })();
